@@ -71,9 +71,9 @@ public class PrintPrimes {
                                " Prime Numbers --- Page " + pageNumber);
           System.out.println("");
           for (int rowOffset = pageOffset; rowOffset < pageOffset + numberOfPrimesPerColumn; rowOffset++){
-            for (int C = 0; C < numberOfColumnsPerPage; C++)
-              if (rowOffset + C * numberOfPrimesPerColumn <= numberOfPrimes)
-                System.out.format("%10d", listOfPrimes[rowOffset + C * numberOfPrimesPerColumn]);
+            for (int numberOfColumns = 0; numberOfColumns < numberOfColumnsPerPage; numberOfColumns++)
+              if (rowOffset + numberOfColumns * numberOfPrimesPerColumn <= numberOfPrimes)
+                System.out.format("%10d", listOfPrimes[rowOffset + numberOfColumns * numberOfPrimesPerColumn]);
             System.out.println("");
           }
           System.out.println("\f");
