@@ -2,22 +2,20 @@ public class PrintPrimes {
   int numberOfPrimes;
   int numberOfPrimesPerColumn;
   int numberOfColumnsPerPage;
-  int WW;
   int ORDMAX;
   int listOfPrimes[];
 
-  public PrintPrimes(int numberOfPrimes, int numberOfPrimesPerColumn, int numberOfColumnsPerPage, int WW, int ORDMAX) {
+  public PrintPrimes(int numberOfPrimes, int numberOfPrimesPerColumn, int numberOfColumnsPerPage, int ORDMAX) {
     this.numberOfPrimes   = numberOfPrimes;
     this.numberOfPrimesPerColumn  = numberOfPrimesPerColumn;
     this.numberOfColumnsPerPage  = numberOfColumnsPerPage;
-    this.WW  = WW;
     this.ORDMAX = ORDMAX;
     this.listOfPrimes = new int[numberOfPrimes + 1];
   }
 
 
   public static void main(String[] args) {
-      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 10, 30);
+      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 30);
       printPrimes.calculatePrimes();
       printPrimes.printPrimes();
   }
@@ -71,9 +69,9 @@ public class PrintPrimes {
                                " Prime Numbers --- Page " + pageNumber);
           System.out.println("");
           for (int rowOffset = pageOffset; rowOffset < pageOffset + numberOfPrimesPerColumn; rowOffset++){
-            for (int numberOfColumns = 0; numberOfColumns < numberOfColumnsPerPage; numberOfColumns++)
+        	for (int numberOfColumns = 0; numberOfColumns < numberOfColumnsPerPage; numberOfColumns++)
               if (rowOffset + numberOfColumns * numberOfPrimesPerColumn <= numberOfPrimes)
-                System.out.format("%10d", listOfPrimes[rowOffset + numberOfColumns * numberOfPrimesPerColumn]);
+        		System.out.format("%10d", listOfPrimes[rowOffset + numberOfColumns * numberOfPrimesPerColumn]);
             System.out.println("");
           }
           System.out.println("\f");
