@@ -2,14 +2,14 @@ public class PrintPrimes {
   int numberOfPrimes;
   int numberOfPrimesPerColumn;
   int numberOfColumnsPerPage;
-  int ORDMAX;
+  int maximumNumberOfElements;
   int listOfPrimes[];
 
-  public PrintPrimes(int numberOfPrimes, int numberOfPrimesPerColumn, int numberOfColumnsPerPage, int ORDMAX) {
+  public PrintPrimes(int numberOfPrimes, int numberOfPrimesPerColumn, int numberOfColumnsPerPage, int maximumNumberOfElements) {
     this.numberOfPrimes   = numberOfPrimes;
     this.numberOfPrimesPerColumn  = numberOfPrimesPerColumn;
     this.numberOfColumnsPerPage  = numberOfColumnsPerPage;
-    this.ORDMAX = ORDMAX;
+    this.maximumNumberOfElements = maximumNumberOfElements;
     this.listOfPrimes = new int[numberOfPrimes + 1];
   }
 
@@ -33,7 +33,7 @@ public class PrintPrimes {
   private void calculateOddPrimes() {
       boolean JPRIME;
       int N;
-      int MULT[] = new int[ORDMAX + 1];
+      int MULT[] = new int[maximumNumberOfElements + 1];
 
       int integerTested = 1;
       int ithElement = 2;
