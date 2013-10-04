@@ -32,7 +32,7 @@ public class PrintPrimes {
 
   private void calculateOddPrimes() {
       boolean JPRIME;
-      int N;
+      int i;
       int MULT[] = new int[maximumNumberOfElements + 1];
 
       int integerTested = 1;
@@ -47,14 +47,14 @@ public class PrintPrimes {
             square = listOfPrimes[ithElement] * listOfPrimes[ithElement];
             MULT[ithElement - 1] = integerTested;
           }
-          N = 2;
+          i = 2;
           JPRIME = true;
-          while (N < ithElement && JPRIME) {
-            while (MULT[N] < integerTested)
-              MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
-              if (MULT[N] == integerTested)
+          while (i < ithElement && JPRIME) {
+            while (MULT[i] < integerTested)
+              MULT[i] = MULT[i] + listOfPrimes[i] + listOfPrimes[i];
+              if (MULT[i] == integerTested)
                 JPRIME = false;
-                N = N + 1;
+                i = i + 1;
           }
         } while (!JPRIME);
         listOfPrimes[primesFoundSoFar] = integerTested;
