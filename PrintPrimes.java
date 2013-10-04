@@ -36,20 +36,20 @@ public class PrintPrimes {
       int MULT[] = new int[ORDMAX + 1];
 
       int integerTested = 1;
-      int ORD = 2;
+      int ithElement = 2;
       int square = 9;
 
       for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
         do {
           integerTested = integerTested + 2;
           if (integerTested == square) {
-            ORD = ORD + 1;
-            square = listOfPrimes[ORD] * listOfPrimes[ORD];
-            MULT[ORD - 1] = integerTested;
+            ithElement = ithElement + 1;
+            square = listOfPrimes[ithElement] * listOfPrimes[ithElement];
+            MULT[ithElement - 1] = integerTested;
           }
           N = 2;
           JPRIME = true;
-          while (N < ORD && JPRIME) {
+          while (N < ithElement && JPRIME) {
             while (MULT[N] < integerTested)
               MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
               if (MULT[N] == integerTested)
@@ -70,7 +70,7 @@ public class PrintPrimes {
           System.out.println("");
           for (int rowOffset = pageOffset; rowOffset < pageOffset + numberOfPrimesPerColumn; rowOffset++){
         	for (int numberOfColumns = 0; numberOfColumns < numberOfColumnsPerPage; numberOfColumns++)
-              if (rowOffset + numberOfColumns * numberOfPrimesPerColumn <= numberOfPrimes)
+        		if (rowOffset + numberOfColumns * numberOfPrimesPerColumn <= numberOfPrimes)
         		System.out.format("%10d", listOfPrimes[rowOffset + numberOfColumns * numberOfPrimesPerColumn]);
                 System.out.println("");
           }
